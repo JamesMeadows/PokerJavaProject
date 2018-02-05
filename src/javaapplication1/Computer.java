@@ -11,4 +11,12 @@ package javaapplication1;
  */
 public class Computer extends Player{
     
+    public Computer(){
+        super("Computer");
+    }
+    
+    @Override
+    public String getType(){
+        return "Computer";
+    }
 }

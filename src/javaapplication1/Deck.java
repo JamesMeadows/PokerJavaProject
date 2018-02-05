@@ -13,38 +13,37 @@ import java.util.Random;
  * @author JamesMeadows18
  */
 public class Deck {
-    
-    
+
+    private static Random random = new Random();
     private final ArrayList<Card> cards = new ArrayList();
-   
-    public Deck(){
-      
+
+    public Deck() {
+
     }
-    
-    public void shuffleDeck(){
+
+    public void shuffleDeck() {
         this.cards.clear();
-        for (int i = 1; i < 14; i++){
-          for (int j = 0; j < 4; j++){
-             Card card = new Card(Card.convertSuit(j),i);
-             this.addCard(card);
-            ///  System.out.println(card.getCardNumber() + " " + card.getSuit());
-          }  
-        }  
+        for (int i = 1; i < 14; i++) {
+            for (int j = 0; j < 4; j++) {
+                Card card = new Card(Card.convertSuit(j), i);
+                this.addCard(card);
+                ///  System.out.println(card.getCardNumber() + " " + card.getSuit());
+            }
+        }
     }
-    
-    Random random = new Random();
-    public Card getRandomCard(){
+
+    public Card getRandomCard() {
         Card card = cards.get(random.nextInt(cards.size()));
         cards.remove(card);
         return card;
     }
-    
-    private void addCard(Card card){
+
+    private void addCard(Card card) {
         this.cards.add(card);
     }
-    
-    public ArrayList<Card> getCards(){
+
+    public ArrayList<Card> getCards() {
         return cards;
     }
- 
+
 }
